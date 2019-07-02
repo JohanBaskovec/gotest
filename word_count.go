@@ -27,11 +27,12 @@ func CountWords(text string) map[string]int {
 	words := SplitByWhiteSpace(cleanedText)
 
 	for _, word := range words {
-		_, ok := wordCount[word]
+		wordLower := strings.ToLower(word)
+		_, ok := wordCount[wordLower]
 		if ok {
-			wordCount[word]++
+			wordCount[wordLower]++
 		} else {
-			wordCount[word] = 1
+			wordCount[wordLower] = 1
 		}
 	}
 	return wordCount

@@ -58,8 +58,15 @@ func TestCountWords(t *testing.T) {
 				"hello": 2,
 				"world": 1,
 				"⻑":     1,
-				"Ỡ":     1,
-				"Ⱘ":     1,
+				"ỡ":     1,
+				"ⱘ":     1,
+			},
+		},
+		{
+			in: "  hello HELLO heLlO woRlD WORLD world !",
+			out: map[string]int{
+				"hello": 3,
+				"world": 3,
 			},
 		},
 	}
